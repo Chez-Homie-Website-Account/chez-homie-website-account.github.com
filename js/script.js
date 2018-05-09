@@ -25,7 +25,7 @@ var markerDistanceSquared = 50000;
 var markerRadius = 8;
 var markerColor = "red"; //Can also be a rgb(red, green, blue) value or #RRGGBB, etc.
 var selectedMarkerColor = "#00ff00";
-var wsURL = "ws://127.0.0.1:9002";
+var wsURL = "ws://35.3.102.58:9002";
 var progressBarCurrentColor = "#33ff33";
 var dropPoints = [
     [475, 600],
