@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Bootstrap Core CSS ––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Font link -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Chez Homie</title>
+</head>
+<body>
+    <!-- BEFORE EVERYTHING -->
+    <div id="useWebSocket">
+        Click this to activate the websocket portion. Only click this if the server is running and ready to receive inputs.
+        <br>
+        This is so you can debug the front-end without needing to deal with the websocket.
+    </div>
+    <br>
+        <!-- Header -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div>
+                <div class="col-sm-3">
+                    <img class="smalllogo" src="img/robot.jpg" alt="LOGO" />
+                </div>
+                <div class="col-sm-auto blue">
+                    <h1>Welcome to Chez Homie</h1>
+                </div>
+                <h3 class="gold">Snack Delivery by Robot</h3>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div id="progressBar">
+        <div class="progressBarStage" style="background-color: white;">Your progress: </div>
+        <div class="progressBarStage" id="progressBarSpecifyLocation">Specify Location</div>
+        <div class="progressBarStage" id="progressBarChooseProduct">Choose Product</div>
+        <div class="progressBarStage" id="progressBarPay">Pay</div>
+        <div class="progressBarStage" id="progressBarOrderStatus">Wait for Delivery</div>
+    </div>
+    <br>
+    <div id="currentStageContents">
+        <noscript>For full functionality of this site it is necessary to enable JavaScript. Here are the <a href="https://www.enable-javascript.com/" target="_blank"> instructions how to enable JavaScript in your web browser</a>.</noscript>
+        <div id="specifyLocationContents" style="display: none;">
+            <canvas id="buildingMap" width="500px" height="500px"></canvas>
+            <div id="mapInstructions">
+                <p>Click and drag to move the map around, and scroll to zoom. Alternatively, use these controls.</p>
+                <div id="controlPanel">
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td class="controlPanelNotHiddenButton" id="controlPanelUp">UP</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="controlPanelUnavailableButton">Floor 3</td>
+                        </tr>
+                        <tr>
+                            <td class="controlPanelNotHiddenButton" id="controlPanelLeft">LEFT</td>
+                            <td></td>
+                            <td class="controlPanelNotHiddenButton" id="controlPanelRight">RIGHT</td>
+                            <td></td>
+                            <td class="controlPanelNotHiddenButton" id="controlPanelIn">+</td>
+                            <td></td>
+                            <td class="controlPanelNotHiddenButton">Floor 2</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="controlPanelNotHiddenButton" id="controlPanelDown">DOWN</td>
+                            <td></td>
+                            <td></td>
+                            <td class="controlPanelNotHiddenButton" id="controlPanelOut">-</td>
+                            <td></td>
+                            <td class="controlPanelUnavailableButton">Floor 1</td>
+                        </tr>
+                    </table>
+                </div>
+                <br><br>
+                <p>Click one of the red spots on the screen to select your delivery location.</p>
+                <br>
+                <div id="confirmLocation">Confirm Location</div>
+            </div>
+        </div>
+        <div id="chooseProductContents" style="display: none;">
+            <p>Please click to select your item. The robot can only take one item per order.</p>
+            <br>
+			<div id="itemsCont" class="container">
+            	<table>
+               		<tr>
+                    	<td>
+	                        <div><img class="itemImage" id="whoppersMaltedMilkBallsImage" src="img/Whoppers malted milk balls.jpg" alt=""></div>
+	                        <br>
+	                        <div class="text-center text"> Price: </div>
+	                        <br>
+	                        <div><a class="btn" href="#" role="button">Add to Cart</a></div>
+	                    </td>
+	                    <td>
+	                        <img class="itemImage" id="nutellaImage" src="img/Nutella.jpeg" alt="">	               
+	                        <br>
+	                        <div class="text-center text"> Price: </div>
+	                        <br>
+	                        <div><a class="btn" href="#" role="button">Add to Cart</a></div>
+	                    </td>
+	                    <td>
+	                        <img class="itemImage" id="boxedWaterImage" src="img/Boxed Water.jpeg" alt="">
+	                        <br>
+	                        <div class="text-center text"> Price: </div>
+	                        <br>
+	                        <div><a class="btn" href="#" role="button">Add to Cart</a></div>
+	                    </td>
+	                </tr>
+	                <tr>
+                    	<td>
+	                        <div><img class="itemImage" id="kitkatImage" src="img/Kitkat.jpg" alt=""></div>
+	                        <br>
+	                        <div class="text-center text"> Price: </div>
+	                        <br>
+	                        <div><a class="btn" href="#" role="button">Add to Cart</a></div>
+	                    </td>
+	                    <td>
+	                        <img class="itemImage" id="pringlesImage" src="img/Pringles.jpg" alt="">
+	                        <br>
+	                        <div class="text-center text"> Price: </div>
+	                        <br>
+	                        <div><a class="btn" href="#" role="button">Add to Cart</a></div>
+	                    </td>
+	                    <td>
+	                        <img class="itemImage" id="pepperidgeFarmCookiesImage" src="img/Pepperidge farm cookies.jpg" alt="">	               
+	                        <br>
+	                        <div class="text-center text"> Price: </div>
+	                        <br>
+	                        <div><a class="btn" href="#" role="button">Add to Cart</a></div>
+	                    </td>
+	                </tr>
+	                <tr>
+                    	<td>
+	                        <div><img class="itemImage" id="pockyImage" src="img/Pocky.jpg" alt=""></div>
+	                        <br>
+	                        <div class="text-center text"> Price: </div>
+	                        <br>
+	                        <div><a class="btn" href="#" role="button">Add to Cart</a></div>
+	                    </td>
+	                    <td>
+	                        <img class="itemImage" id="skinnyPopPopcornImage" src="img/Skinny pop popcorn.jpg" alt="">	               
+	                        <br>
+	                        <div class="text-center text"> Price: </div>
+	                        <br>
+	                        <div><a class="btn" href="#" role="button">Add to Cart</a></div>
+	                    </td>
+	                </tr>
+	            </table>
+	        </div>
+            <div id="yourCart">
+                <p>Your selection:</p>
+                <p id="userSelection">None</p>
+                <br>
+                <p>Price:</p>
+                <p id="userPrice">$0.00</p>
+                <br>
+                <div id="clearSelectionButton">Clear Cart</div>
+                <br>
+                <br>
+                <div id="confirmSelectionButton">Proceed to Checkout</div>
+            </div>
+        </div>
+        <div id="payContents" style="display: none;">
+            <p>Payment screen goes here</p>
+            <br>
+            <p>Will use paypal, still TODO</p>
+            <br>
+            <p>For now, pretend by clicking this button:</p>
+            <div id="paidButton">I paid!</div>
+        </div>
+        <div id="orderStatusContents" style="display: none;">
+            <p id="wholeOrderStatus">Your order has been received! There are currently <span id="numOrdersBeforeYou">*not yet assigned*</span> orders before you will be served.</p>
+        </div>
+    </div>
+    <script src="js/animation.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

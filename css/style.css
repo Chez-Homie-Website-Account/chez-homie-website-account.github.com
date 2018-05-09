@@ -1,0 +1,158 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+body {
+    margin: 1.414em 0 0.5em;
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+}
+
+h1 {
+    margin-top: 0em;
+    font-size: 4em;
+}
+
+h2 {
+    font-size: 2.369em;
+}
+
+h3 {
+    margin-top: 0;
+    font-size: 3em;
+    margin-left: 12.2em;
+}
+
+h4 {
+    font-size: 1.333em;
+}
+
+div {
+    display: inline-block;
+}
+
+canvas {
+    border: 1px dotted black;
+}
+
+p {
+    margin: 0px;
+}
+
+body {
+    font-size: 2em;
+}
+
+.blue {
+    color: #00274c;
+}
+
+.gold {
+    color: #ffcb05;
+}
+
+.smalllogo {
+    height: 5em;
+}
+
+div.progressBarStage {
+    width: 200px;
+    text-align: center;
+    padding: 10px 0px;
+    margin: 0px 1px;
+    background-color: #aaccff;
+}
+
+canvas {
+    border: 1px dotted black;
+}
+
+div#controlPanel table tr td {
+    text-align: center;
+    width: 68px;
+    padding: 25px 0px;
+}
+
+td.controlPanelNotHiddenButton {
+    background-color: #aaccff;
+}
+
+td.controlPanelUnavailableButton {
+    background-color: #cccccc;
+}
+
+img.itemImage {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+div#progressBar {
+    margin-bottom: 25px;
+}
+
+div#mapInstructions {
+    vertical-align: top;
+}
+
+div#confirmLocation {
+    padding: 5px 10px;
+    background-color: #00ffff;
+}
+
+div#yourCart {
+    vertical-align: top;
+}
+
+div#clearSelectionButton {
+    padding: 5px 10px;
+    background-color: #ffaaaa;
+    visibility: none;
+}
+
+div#confirmSelectionButton {
+    padding: 5px 10px;
+    background-color: #aaffaa;
+}
+
+div#paidButton {
+    padding: 5px 10px;
+    background-color: #aaffaa;
+}
+
+div#useWebSocket {
+    padding: 5px 10px;
+    margin: 10px;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+div {
+    display: inline-block;
+}
+
+.btn {
+    font-size: .8rem;
+    letter-spacing: .091em;
+    line-height: 1em;
+    border-radius: 5em;
+    /*    clock wise --> top left bottom right*/
+    margin: 0 5em;
+    text-align: center;
+    color: #ffcb05;
+    background: #00274c;
+}
+
+.text {
+    margin:0 7em;
+}
+
+.item {
+    justify-content: center;
+}
+
+.btn:hover {
+    background-color: #ffcb05;
+    color: #00274c;
+    opacity: 0.8;
+}
