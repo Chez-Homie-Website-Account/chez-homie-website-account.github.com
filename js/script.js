@@ -489,8 +489,4 @@ function pretendIPaid() {
 /// EXECUTED CODE
 ///////////////////////////////////////////
 
-<<<<<<< HEAD
 setup();
-=======
-setup();
->>>>>>> 242ff772b0a9b2c05504fda1d027a2170e85b030
