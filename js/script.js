@@ -25,7 +25,11 @@ var markerDistanceSquared = 50000;
 var markerRadius = 8;
 var markerColor = "red"; //Can also be a rgb(red, green, blue) value or #RRGGBB, etc.
 var selectedMarkerColor = "#00ff00";
+<<<<<<< HEAD
 var wsURL = "ws://127.0.0.1:9002";
+=======
+var wsURL = "ws://35.3.102.58:9002";
+>>>>>>> 242ff772b0a9b2c05504fda1d027a2170e85b030
 var progressBarCurrentColor = "#33ff33";
 var dropPoints = [
     [475, 600],
@@ -489,4 +493,8 @@ function pretendIPaid() {
 /// EXECUTED CODE
 ///////////////////////////////////////////
 
+<<<<<<< HEAD
 setup();
+=======
+setup();
+>>>>>>> 242ff772b0a9b2c05504fda1d027a2170e85b030
